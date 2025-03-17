@@ -19,7 +19,7 @@ input {
 }
 
 .card {
-  width: 120px;
+  width: 100px;
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 8px;
