@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node generateImagesJson.js",
+    "prebuild": "node generateImagesJson.js",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
