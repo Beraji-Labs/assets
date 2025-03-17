@@ -8,7 +8,8 @@ interface ShortenTextProps {
 const ShortenText: React.FC<ShortenTextProps> = ({ text, maxLength }) => {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
+  const handleCopy = (e: React.MouseEvent<HTMLSpanElement>) => {
+    e.preventDefault();
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -20,9 +21,9 @@ const ShortenText: React.FC<ShortenTextProps> = ({ text, maxLength }) => {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
       <span title={text}>{shortenedText}</span>
-      <button onClick={handleCopy} style={{ cursor: "pointer" }}>
+      <span onClick={handleCopy} style={{ cursor: "pointer" }}>
         {copied ? "✅" : "📋"}
-      </button>
+      </span>
     </div>
   );
 };
