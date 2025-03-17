@@ -46,10 +46,10 @@ function App() {
             <div key={index} className="card">
               <img src={img.url} alt={img.name} className="image" />
               <p>
-                <ShortenText text={img.name} maxLength={12} />
+                <ShortenText text={img.name} maxLength={8} />
               </p>
               <a href={img.url} target="_blank" rel="noopener noreferrer">
-                <ShortenText text={img.url} maxLength={12} />
+                <ShortenText text={img.url} maxLength={8} />
               </a>
             </div>
           ))
