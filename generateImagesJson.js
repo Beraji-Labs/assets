@@ -23,7 +23,7 @@ async function getAllImages(dir) {
         // If it's a directory, scan recursively
         const nestedFiles = await getAllImages(fullPath);
         imageFiles = imageFiles.concat(nestedFiles);
-      } else if (/\.(jpg|jpeg|png|gif|webp)$/i.test(item.name)) {
+      } else if (/\.(jpg|jpeg|png|gif|webp|svg)$/i.test(item.name)) {
         // If it's an image file, add it to the list
         imageFiles.push(fullPath.replace(imagesDir, "").replace(/\\/g, "/")); // Keep relative paths
       }
